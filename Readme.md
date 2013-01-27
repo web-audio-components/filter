@@ -34,6 +34,7 @@ parameter.
 - `type` Filter type. Corresponds to the BiquadFilter enum.
 - `frequency` Filter frequency.
 - `Q` Filter Q.
+- `gain` Filter gain.
 - `wet` Wet signal gain coefficient.
 - `dry` Dry signal gain coefficient.
 

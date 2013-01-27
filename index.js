@@ -7,6 +7,7 @@
  * @param {number} opts.type
  * @param {number} opts.frequency
  * @param {number} opts.Q
+ * @param {number} opts.gain
  * @param {number} opts.wet
  * @param {number} opts.dry
  */
@@ -23,6 +24,7 @@ function Filter (context, opts) {
   this._filter.type             = opts.type      || p.type.defaultValue;
   this._filter.frequency.value  = opts.frequency || p.frequency.defaultValue;
   this._filter.Q.value          = opts.Q         || p.Q.defaultValue;
+  this._filter.gain.value       = opts.gain      || p.gain.defaultValue;
   this._wet.gain.value          = opts.wet       || p.wet.defaultValue;
   this._dry.gain.value          = opts.dry       || p.dry.defaultValue;
 
@@ -84,6 +86,12 @@ Filter.prototype = Object.create(null, {
           defaultValue: 1.0,
           type: "float"
         },
+        gain: {
+          min: -40,
+          max: 40,
+          defaultValue: 1,
+          type: "float"
+        }
         wet: {
           min: 0,
           max: 1,
@@ -126,6 +134,14 @@ Filter.prototype = Object.create(null, {
     get: function () { return this._filter.Q.value; },
     set: function (value) {
       this._filter.Q.setValueAtTime(value, 0);
+    }
+  },
+
+  gain: {
+    enumerable: true,
+    get: function () { return this._filter.gain.value; },
+    set: function (value) {
+      this._filter.gain.setValueAtTime(value, 0);
     }
   },
 
