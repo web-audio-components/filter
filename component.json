@@ -1,0 +1,23 @@
+{
+  "name": "filter",
+  "repo": "web-audio-components/filter",
+  "description": "A simplication of Web Audio API filters.",
+  "version": "0.0.1",
+  "author": "Nick Thompson <ncthom91@gmail.com>",
+  "keywords": [
+    "web-audio",
+    "filter",
+    "effect",
+    "lowpass",
+    "highpass"
+  ],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ],
+  "web-audio": {
+    "type": "effect"
+  }
+}
