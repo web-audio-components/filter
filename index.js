@@ -91,7 +91,7 @@ Filter.prototype = Object.create(null, {
           max: 40,
           defaultValue: 1,
           type: "float"
-        }
+        },
         wet: {
           min: 0,
           max: 1,
