@@ -21,12 +21,14 @@ function Filter (context, opts) {
   this._wet = context.createGainNode();
 
   var p = this.meta.params;
-  this._filter.type             = opts.type      || p.type.defaultValue;
+  opts = opts || {};
+  this._type                    = opts.type      || p.type.defaultValue;
   this._filter.frequency.value  = opts.frequency || p.frequency.defaultValue;
   this._filter.Q.value          = opts.Q         || p.Q.defaultValue;
   this._filter.gain.value       = opts.gain      || p.gain.defaultValue;
   this._wet.gain.value          = opts.wet       || p.wet.defaultValue;
   this._dry.gain.value          = opts.dry       || p.dry.defaultValue;
+  this._filter.type             = this._type;
 
   this.input.connect(this._filter);
   this._filter.connect(this._wet);
@@ -74,7 +76,7 @@ Filter.prototype = Object.create(null, {
           defaultValue: 0,
           type: "int"
         },
-        cutoff: {
+        frequency: {
           min: 0,
           max: 22050,
           defaultValue: 8000,
