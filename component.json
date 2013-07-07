@@ -2,7 +2,7 @@
   "name": "filter",
   "repo": "web-audio-components/filter",
   "description": "A simplication of Web Audio API filters.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Nick Thompson <ncthom91@gmail.com>",
   "twitter": "@ncthom91",
   "keywords": [

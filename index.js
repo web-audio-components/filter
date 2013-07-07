@@ -13,12 +13,12 @@
  */
 
 function Filter (context, opts) {
-  this.input = context.createGainNode();
-  this.output = context.createGainNode();
+  this.input = context.createGain();
+  this.output = context.createGain();
 
   this._filter = context.createBiquadFilter();
-  this._dry = context.createGainNode();
-  this._wet = context.createGainNode();
+  this._dry = context.createGain();
+  this._wet = context.createGain();
 
   var p = this.meta.params;
   opts = opts || {};
